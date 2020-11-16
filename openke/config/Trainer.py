@@ -54,8 +54,8 @@ class Trainer(object):
 		return loss.item()
 
 	def run(self):
-		if self.use_gpu:
-			self.model.cuda()
+		#if self.use_gpu:
+			#self.model.cuda()
 
 		if self.optimizer != None:
 			pass
@@ -103,7 +103,7 @@ class Trainer(object):
 
 	def to_var(self, x, use_gpu):
 		if use_gpu:
-			return Variable(torch.from_numpy(x).cuda())
+			return Variable(torch.from_numpy(x))
 		else:
 			return Variable(torch.from_numpy(x))
 
